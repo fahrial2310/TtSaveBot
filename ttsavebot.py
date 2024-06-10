@@ -1,8 +1,7 @@
 import os
 from tiktok_downloader import snaptik
 from moviepy import editor
-from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, Message
-from pyrogram import Client, filters
+from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from script import script
 from config import config
 from creator_only import config
@@ -15,9 +14,8 @@ BOT_TOKEN = "7086014869:AAHmiOpuyrzga0xS8Ol4VTSVnlkgrj_GNNc"
 bot = telebot.TeleBot(BOT_TOKEN)
 
 @bot.message_handler(commands=['start'])
-async def start_command(message):
-    try:
-        await message.reply_text(
+def start_command(message):
+    bot.send_message.reply_text(
             text=script.START_MSG.format(message.from_user.mention),
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
