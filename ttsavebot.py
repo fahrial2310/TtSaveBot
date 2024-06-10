@@ -1,10 +1,15 @@
+# don't edit
+CREATOR = "Rii?"
+CREATOR_LINK = "t.me/sengklek_ais"
+REPO = "https://github.com/fahrial2310/TtSaveBot
+# don't edit
+
 import os
 from tiktok_downloader import snaptik
 from moviepy import editor
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from script import script
 from config import Config
-from creator_only import CREATOR, CREATOR_LINK, REPO
 
 import telebot
 
