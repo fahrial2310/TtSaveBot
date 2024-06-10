@@ -36,7 +36,7 @@ from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 import telebot
 
 # get your bot token on @BotFather
-BOT_TOKEN = "7086014869:AAHmiOpuyrzga0xS8Ol4VTSVnlkgrj_GNNc"
+BOT_TOKEN = "6488740886:AAFH4La12b2MzvKfrFvLCOpKTexE3seeTC8"
 
 bot = telebot.TeleBot(BOT_TOKEN)
 
