@@ -10,7 +10,7 @@ from creator_only import config
 import telebot
 
 # get your bot token on @BotFather
-BOT_TOKEN = "BOT_TOKEN","7086014869:AAHJCpJ2vHqbSp32tVFqOkKdtsmE461pIVo"
+BOT_TOKEN = "7086014869:AAHJCpJ2vHqbSp32tVFqOkKdtsmE461pIVo"
 
 bot = telebot.TeleBot(BOT_TOKEN)
 
