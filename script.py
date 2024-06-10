@@ -1,5 +1,10 @@
+# don't edit
+CREATOR = "Rii?"
+CREATOR_LINK = "t.me/sengklek_ais"
+REPO = "https://github.com/fahrial2310/TtSaveBot"
+# don't edit
+
 from config import Config
-from creator_only import Config
 
 class script(object):
   ERROR_MSG = """ ❌ Upload error, link salah, video dihapus atau aku tidak bisa menemukannya."""
