@@ -9,8 +9,6 @@ from creator_only import config
 
 import telebot
 
-# get your bot token on @BotFather
-BOT_TOKEN = "7086014869:AAEQ1CEs8nM57vy8fQOYjIbOWIHOwg4g6sg"
 bot = telebot.TeleBot(BOT_TOKEN)
 
 @bot.message_handler(commands=['start'])
