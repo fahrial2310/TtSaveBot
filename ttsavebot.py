@@ -4,7 +4,7 @@ from moviepy import editor
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from script import script
 from config import Config
-from creator_only import Config
+from creator_only import CREATOR, CREATOR_LINK, REPO
 
 import telebot
 
