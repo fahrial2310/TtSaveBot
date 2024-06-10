@@ -46,7 +46,7 @@ def start_command(message):
                      text=script.START_MSG,
                      parse_mode='html',
                      disable_web_page_preview=True,
-                     message_markup=InlineKeyboardMarkup(
+                     reply_markup=InlineKeyboardMarkup(
                          [
                              [
                                  InlineKeyboardButton("Creator", url=f'{CREATOR_LINK}'),
