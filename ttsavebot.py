@@ -15,13 +15,13 @@ bot = telebot.TeleBot(BOT_TOKEN)
 async def start(client: Client, message: Message):
     try:
         await message.reply_text(
-            text=script.start_msg.format(message.from_user.mention),
+            text=script.START_MSG.format(message.from_user.mention),
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton("Creator", url={creator}),
-                        InlineKeyboardButton("repo", url={repo}),
+                        InlineKeyboardButton("Creator", url={CREATOR}),
+                        InlineKeyboardButton("Repo", url={REPO}),
                     ],
                 ]
             ),
@@ -34,7 +34,7 @@ async def start(client: Client, message: Message):
 @bot.message_handler(commands=['help'])
 def help_command(message):
     bot.send_message(chat_id=message.chat.id, 
-                    text=script.help_msg, 
+                    text=script.HELP_MSG, 
                     parse_mode='html')
 
 
@@ -58,12 +58,12 @@ def text(message):
                     bot.send_video(
                     chat_id=message.chat.id,
                     data=file,
-                    caption=f'{video_url[:31]}\n\nDownloaded from {bot_name}'
+                    caption=f"{video_url[:31]}\n\nDownloaded from {BOT_NAME}"
                     )
                 os.remove(path)
 
             except:
-                bot.send_message(chat_id=message.chat.id, text=error_msg)
+                bot.send_message(chat_id=message.chat.id, text=script.ERROR_MSG)
                
         else:
             bot.send_message(chat_id=message.chat.id, 
