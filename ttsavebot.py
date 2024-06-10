@@ -9,7 +9,7 @@ from creator_only import config
 
 import telebot
 
-bot = telebot.TeleBot(TOKEN)
+bot = telebot.TeleBot(BOT_TOKEN)
 
 @Client.on_message(filters.command(["start"]) & filters.private)
 async def start(client: Client, message: Message):
@@ -45,7 +45,7 @@ if not os.path.exists('videos'):
 @bot.message_handler(content_types=['text'])
 def text(message):
     if message.chat.type == "private":
-        if message.text.startswith('https://vm.tiktok.com') or message.text.startswith('http://vm.tiktok.com'):
+        if message.text.startswith('https://vt.tiktok.com') or message.text.startswith('http://vt.tiktok.com'):
             video_url = message.text
 
             try:
@@ -63,11 +63,11 @@ def text(message):
                 os.remove(path)
 
             except:
-                bot.send_message(chat_id=message.chat.id, text=f'❌ Upload error, link salah, video dihapus atau aku tidak bisa menemukannya.')
+                bot.send_message(chat_id=message.chat.id, text=error_msg)
                
         else:
             bot.send_message(chat_id=message.chat.id, 
-                            text='😕 I didn\'t understand you, send me a link to a video from Tik Tok <b>TikTok</b>.', 
+                            text='😕 I didn't understand you, send me a link to a video from Tik Tok <b>TikTok</b>.', 
                             parse_mode='html')
 
 if __name__ == "__main__":
