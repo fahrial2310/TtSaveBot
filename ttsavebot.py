@@ -10,8 +10,7 @@ from creator_only import config
 import telebot
 
 # get your bot token on @BotFather
-BOT_TOKEN = "7086014869:AAHJCpJ2vHqbSp32tVFqOkKdtsmE461pIVo"
-
+BOT_TOKEN = "7086014869:AAEQ1CEs8nM57vy8fQOYjIbOWIHOwg4g6sg"
 bot = telebot.TeleBot(BOT_TOKEN)
 
 @Client.on_message(filters.command(["start"]) & filters.private)
