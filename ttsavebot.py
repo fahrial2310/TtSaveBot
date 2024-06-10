@@ -3,6 +3,7 @@ from tiktok_downloader import snaptik
 from moviepy import editor
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, Message
 from pyrogram import Client, filters
+from script import script
 
 import telebot
 
