@@ -15,22 +15,18 @@ bot = telebot.TeleBot(BOT_TOKEN)
 
 @bot.message_handler(commands=['start'])
 def start_command(message):
-    bot.send_message.reply_text(
-            text=script.START_MSG.format(message.from_user.mention),
-            disable_web_page_preview=True,
-            reply_markup=InlineKeyboardMarkup(
-                [
-                    [
-                        InlineKeyboardButton("Creator", url={CREATOR}),
-                        InlineKeyboardButton("Repo", url={REPO}),
-                    ],
-                ]
-            ),
-            reply_to_message_id=message.message_id,
-        )
-    except Exception:
-        pass
-
+    bot.send_message.reply_text(chat_id=message.chat.id,
+                                text=script.START_MSG.format(message.from_user.mention),
+                                disable_web_page_preview=True,
+                                reply_markup=InlineKeyboardMarkup(
+                                    [
+                                        [
+                                            InlineKeyboardButton("Creator", url={CREATOR}),
+                                            InlineKeyboardButton("Repo", url={REPO}),
+                                        ],
+                                    ),
+                                reply_to_message_id=message.message_id,
+                               ),
 
 @bot.message_handler(commands=['help'])
 def help_command(message):
