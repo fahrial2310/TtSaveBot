@@ -1,7 +1,7 @@
 import os
 
 class config(object):
-  creator = os.environ.get("creator", "@sengklek_ais")
-  repo = os.environ.get("repo", "https://github.com/fahrial2310/TtSaveBot")
+  CREATOR = os.environ.get("CREATOR", "@sengklek_ais")
+  REPO = os.environ.get("REPO", "https://github.com/fahrial2310/TtSaveBot")
   
   
