@@ -1,4 +1,4 @@
-from ttsavebot import config
+from config import config
 class script(object):
   ERROR_MSG = """ ❌ Upload error, link salah, video dihapus atau aku tidak bisa menemukannya."""
   START_MSG = """ 👋 Halo, saya adalah {bot_name}
