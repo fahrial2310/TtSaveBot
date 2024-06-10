@@ -15,7 +15,7 @@ BOT_TOKEN = "7086014869:AAHmiOpuyrzga0xS8Ol4VTSVnlkgrj_GNNc"
 bot = telebot.TeleBot(BOT_TOKEN)
 
 @bot.message_handler(commands=['start'])
-async def start_command(client: Client, message: Message, message):
+async def start_command(message):
     try:
         await message.reply_text(
             text=script.START_MSG.format(message.from_user.mention),
