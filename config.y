@@ -1,6 +1,6 @@
-# for owner development(owner_dev)
-# delete None and change with telegram username, example "@sengklek_ais"
-# Don't forget to use the " sign 
+## for owner development(owner_dev)
+## delete None and change with telegram username, example "@sengklek_ais"
+## Don't forget to use the " sign 
 import os
 
 class config(object):
