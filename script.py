@@ -6,6 +6,6 @@ class script(object):
   /help - bantuan untuk menggunakan bot.
   
   Creator : {creator}\n Developing by : {owner_dev} """
-  help_msg = "" ❓ Untuk mengunduh video dari <b>TikTok</b>, <b>kirim</b> link ke saya.
+  help_msg = """ ❓ Untuk mengunduh video dari <b>TikTok</b>, <b>kirim</b> link ke saya.
   <b>Link harus dimulai dari:</b>
   🔗 https://vt.tiktok.com/... """
