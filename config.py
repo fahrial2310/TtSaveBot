@@ -8,4 +8,5 @@ class config(object):
 # Don't forget to use the " sign 
   OWNER_DEV = os.environ.get("OWNER_DEV", "@sengklek_ais")
 
-# add bot token in ttsavebot.py file
+# get your bot token on @BotFather
+  BOT_TOKEN = "7086014869:AAHmiOpuyrzga0xS8Ol4VTSVnlkgrj_GNNc"
