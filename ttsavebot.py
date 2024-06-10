@@ -16,7 +16,7 @@ bot = telebot.TeleBot(BOT_TOKEN)
 @bot.message_handler(commands=['start'])
 def start_command(message):
     bot.send_message(chat_id=message.chat.id,
-                     text=script.START_MSG.format(message.from_user),
+                     text=script.START_MSG,
                      parse_mode='html',
                      disable_web_page_preview=True,
                      message_markup=InlineKeyboardMarkup(
