@@ -3,13 +3,10 @@ from tiktok_downloader import snaptik
 from moviepy import editor
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from script import script
-from config import config
+from config import Config
 from creator_only import config
 
 import telebot
-
-# get your bot token on @BotFather
-BOT_TOKEN = "7086014869:AAHmiOpuyrzga0xS8Ol4VTSVnlkgrj_GNNc"
 
 bot = telebot.TeleBot(BOT_TOKEN)
 
