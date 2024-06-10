@@ -25,7 +25,8 @@ def start_command(message):
                                  InlineKeyboardButton("Creator", url={CREATOR}),
                                  InlineKeyboardButton("Repo", url={REPO}),
                              ],
-                             ),
+                         ],
+                     ),
                     ),
 
 @bot.message_handler(commands=['help'])
