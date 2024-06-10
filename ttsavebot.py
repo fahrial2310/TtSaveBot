@@ -8,6 +8,9 @@ from creator_only import Config
 
 import telebot
 
+# get your bot token on @BotFather
+BOT_TOKEN = "7086014869:AAHmiOpuyrzga0xS8Ol4VTSVnlkgrj_GNNc"
+
 bot = telebot.TeleBot(BOT_TOKEN)
 
 @bot.message_handler(commands=['start'])
