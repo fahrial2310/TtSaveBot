@@ -1,4 +1,4 @@
-from config import config
+from config import BOT_NAME, CREATOR, OWNER_DEV, 
 from creator_only import config
 class script(object):
   ERROR_MSG = """ ❌ Upload error, link salah, video dihapus atau aku tidak bisa menemukannya."""
