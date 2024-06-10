@@ -3,7 +3,7 @@ from creator_only import Config
 
 class script(object):
   ERROR_MSG = """ ❌ Upload error, link salah, video dihapus atau aku tidak bisa menemukannya."""
-  START_MSG = """ 👋 Halo, saya adalah {BOT_NAME}
+  START_MSG = f""" 👋 Halo, saya adalah {BOT_NAME}
   saya akan membantu anda mengunduh video <b>TikTok</b>.
   /help - bantuan untuk menggunakan bot.
   
