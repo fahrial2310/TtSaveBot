@@ -1,7 +1,7 @@
 # don't edit
 CREATOR = "Rii?"
 CREATOR_LINK = "t.me/sengklek_ais"
-REPO = "https://github.com/fahrial2310/TtSaveBot
+REPO = "https://github.com/fahrial2310/TtSaveBot"
 # don't edit
 
 import os
