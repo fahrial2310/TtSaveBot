@@ -5,10 +5,9 @@ from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, Message
 from pyrogram import Client, filters
 from script import script
 from config import config
+from creator_only import config
 
 import telebot
-
-TOKEN = "6713777196:AAH2nhHvxA61iceQfZZccNJ6jkwSGQ2mc-0"
 
 bot = telebot.TeleBot(TOKEN)
 
