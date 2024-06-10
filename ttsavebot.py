@@ -13,8 +13,8 @@ import telebot
 BOT_TOKEN = "7086014869:AAEQ1CEs8nM57vy8fQOYjIbOWIHOwg4g6sg"
 bot = telebot.TeleBot(BOT_TOKEN)
 
-@Client.on_message(filters.command(["start"]) & filters.private)
-async def start(client: Client, message: Message):
+@bot.message_handler(commands=['start'])
+async def start_command(client: Client, message: Message):
     try:
         await message.reply_text(
             text=script.START_MSG.format(message.from_user.mention),
