@@ -43,6 +43,7 @@ bot = telebot.TeleBot(BOT_TOKEN)
 @bot.message_handler(commands=['start'])
 def start_command(message):
     bot.send_message(chat_id=message.chat.id,
+                     user_message.message.reply_text(message_reply_text, reply_markup=reply_markup),
                      text=script.START_MSG,
                      parse_mode='html',
                      disable_web_page_preview=True,
@@ -54,7 +55,6 @@ def start_command(message):
                              ],
                          ],
                      ),
-                        user_message.message.reply_text(message_reply_text, reply_markup=reply_markup)
                     ),
 
 @bot.message_handler(commands=['help'])
