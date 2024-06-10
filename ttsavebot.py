@@ -19,7 +19,7 @@ def start_command(message):
                      message_markup=InlineKeyboardMarkup(
                          [
                              [
-                                 InlineKeyboardButton("Creator", url={CREATOR}),
+                                 InlineKeyboardButton("Creator", url={CREATOR_LINK}),
                                  InlineKeyboardButton("Repo", url={REPO}),
                              ],
                          ],
