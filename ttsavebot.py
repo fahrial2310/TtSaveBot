@@ -53,8 +53,7 @@ def start_command(message):
                                  InlineKeyboardButton("Repo", url=f'{REPO}'),
                              ],
                          ],
-                     ),
-                     update.message.reply_text(message_reply_text, reply_markup=reply_markup))
+                     ))
 
 @bot.message_handler(commands=['help'])
 def help_command(message):
