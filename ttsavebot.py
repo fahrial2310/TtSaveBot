@@ -4,12 +4,21 @@ CREATOR_LINK = "t.me/sengklek_ais"
 REPO = "https://github.com/fahrial2310/TtSaveBot"
 # don't edit
 
+# can edit
+BOT_NAME = "Alvinttsavebot"  
+BOT_USERNAME = "Alvinttsavebot"
+OWNER_LINK = "t.me/sengklek_ais"
+# for owner development(owner_dev)
+# delete None and change with telegram username, example "@sengklek_ais"
+# Don't forget to use the " sign
+OWNER_DEV = "@sengklek_ais"
+# can edit
+
+
 import os
 from tiktok_downloader import snaptik
 from moviepy import editor
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
-from script import script
-from config import Config
 
 import telebot
 
