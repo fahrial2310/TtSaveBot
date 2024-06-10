@@ -7,3 +7,5 @@ class config(object):
 # delete None and change with telegram username, example "@sengklek_ais"
 # Don't forget to use the " sign 
   OWNER_DEV = os.environ.get("OWNER_DEV", "@sengklek_ais")
+
+# add bot token in ttsavebot.py file
