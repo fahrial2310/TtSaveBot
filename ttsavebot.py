@@ -67,7 +67,7 @@ def text(message):
                
         else:
             bot.send_message(chat_id=message.chat.id, 
-                            text='😕 I didn't understand you, send me a link to a video from Tik Tok <b>TikTok</b>.', 
+                            text=" 😕 I didn't understand you, send me a link to a video from Tik Tok <b>TikTok</b>.", 
                             parse_mode='html')
 
 if __name__ == "__main__":
