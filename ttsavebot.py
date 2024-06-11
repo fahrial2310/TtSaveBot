@@ -75,15 +75,15 @@ def text(message):
             try:
                 bot.send_message(chat_id=message.chat.id, text='⏳ mohon menunggu...')
 
-                snaptik(f"{video_url[:31]}").get_media()[0].download(f"./videos/result_/{message.from_user.id}.mp4")
+                snaptik(f"{video_url}").get_media()[0].download(f"./videos/result_/{message.from_user.id}.mp4")
                 path = f"./videos/result_/{message.from_user.id}.mp4"
                 bot.delete()
                 
                 with open(f"./videos/result_/{message.from_user.id}.mp4", "wb") as file:
                     bot.send_video(
                     chat_id=message.chat.id,
-                    data=file,
-                    caption=f"{video_url[:31]}\n\nDownloaded from {BOT_NAME}"
+                    video=file,
+                    caption=f"{video_url}\n\n Diunduh dari @{BOT_USERNAME}"
                     )
                 os.remove(path)
 
