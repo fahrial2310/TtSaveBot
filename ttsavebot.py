@@ -84,8 +84,8 @@ def text(message):
                     data=file,
                     caption=f"{video_url[:31]}\n\nDownloaded from {BOT_NAME}"
                     )
+                  bot.delete()
                 os.remove(path)
-              bot.delete()
 
             except:
                 bot.send_message(chat_id=message.chat.id, text=script.ERROR_MSG)
