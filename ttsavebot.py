@@ -9,9 +9,9 @@ BOT_NAME = "Alvinttsavebot"
 BOT_USERNAME = "Alvinttsavebot"
 OWNER_LINK = "t.me/sengklek_ais"
 # for owner development(owner_dev)
-# delete None and change with telegram username, example "@sengklek_ais"
+# delete None and change with telegram username without @, example "sengklek_ais"
 # Don't forget to use the " sign
-OWNER_DEV = "@sengklek_ais"
+OWNER_DEV = "sengklek_ais"
 # can edit
 
 # edit text here
@@ -22,7 +22,7 @@ class script(object):
   /help - untuk bantuan menggunakan bot.
   
   <b>Creator :</b> <a href='{CREATOR_LINK}'>{CREATOR}</a>
-  <b>Developing by :</b> <a href='{OWNER_LINK}'>{OWNER_DEV}</a> """
+  <b>Developing by :</b> @{OWNER_DEV} """
   HELP_MSG = """❓ Kirim link untuk mengunduh video dari <b>TikTok</b>.
   <b>Link harus dimulai dari:</b>
   🔗 https://vt.tiktok.com/... """
