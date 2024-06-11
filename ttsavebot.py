@@ -77,7 +77,7 @@ def text(message):
 
                 snaptik(f"{video_url[:31]}").get_media()[0].download(f"./videos/result_/{message.from_user.id}.mp4")
                 path = f"./videos/result_/{message.from_user.id}.mp4"
-              bot.delete()
+                bot.delete()
                 
                 with open(f"./videos/result_/{message.from_user.id}.mp4", "wb") as file:
                     bot.send_video(
