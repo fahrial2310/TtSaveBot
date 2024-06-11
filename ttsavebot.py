@@ -26,6 +26,8 @@ class script(object):
   HELP_MSG = """❓ Kirim link untuk mengunduh video dari <b>TikTok</b>.
   <b>Link harus dimulai dari:</b>
   🔗 https://vt.tiktok.com/... """
+  ABOUT_MSG = f"""{BOT_NAME} adalah bot telegram yang dapat mengunduh video <b>Tiktok</b>.
+  Kirim link TikTok maka akan dikonversikan menjadi video."""
 # edit text here
 
 import os
@@ -42,38 +44,53 @@ bot = telebot.TeleBot(BOT_TOKEN)
 
 @bot.message_handler(commands=['start'])
 def start_command(message):
-    bot.send_message(chat_id=message.chat.id,
-                     text=script.START_MSG,
-                     parse_mode='html',
-                     disable_web_page_preview=True,
-                     reply_markup=InlineKeyboardMarkup(
-                         [
-                             [
-                               InlineKeyboardButton("Creator", url=f'{CREATOR_LINK}')
-                             ],
-                             [
-                               InlinekeyboardButton("Help", callback_data="help_data")
-                             ],
-                         ],
-                     ))
+  bot.send_message(chat_id=message.chat.id,
+                   text=script.START_MSG,
+                   parse_mode='html',
+                   disable_web_page_preview=True,
+                   reply_markup=InlineKeyboardMarkup(
+                     [
+                       [
+                         InlinekeyboardButton("Help", callback_data="help_data")
+                       ],
+                     ],
+                   ))
 
+@bot.message_handler(commands=['about'])
+def about_command(message):
+  bot.send_message(chat_id=message.chat.id,
+                   text=script.ABOUT_MSG,
+                   parse_mode='html',
+                   desable_web_page_preview=True,
+                   reply_markup=InlineKeyboardMarkup(
+                     [
+                       [
+                         InlineKeyboardButton("Start" , callabck_data="start_data"),
+                         InlineKeyboardButton("Help" , callback_data="help_data")
+                       ],
+                       [
+                         InlineKeyboardButton("Creator", url=f'{CREATOR_LINK}'),
+                         InlineKeyboardButton("Repo", url=f'{REPO}')
+                       ],
+                     ],
+                   ))
+  
 @bot.message_handler(commands=['help'])
 def help_command(message):
-    bot.send_message(chat_id=message.chat.id, 
-                    text=script.HELP_MSG, 
-                    parse_mode='html', 
-                    desable_web_page_preview=True, 
-                    reply_markup=InlineKeyboardMarkup(
-                      [
-                        [
-                          InlineKeyboardButton("Creator", url=f'{CREATOR_LINK}'),
-                          InlineKeyboardButton("Repo", url=f'{REPO}')
-                        ],
-                        [
-                          InlineKeyboardButton("◀ Back", callback_data="start_data")
-                        ],
-                      ],
-                    ))
+  bot.send_message(chat_id=message.chat.id, 
+                   text=script.HELP_MSG, 
+                   parse_mode='html', 
+                   desable_web_page_preview=True, 
+                   reply_markup=InlineKeyboardMarkup(
+                     [
+                       [
+                         InlineKeyboardButton("About", callback_data="about_data")
+                       ],
+                       [
+                         InlineKeyboardButton("◀ Back", callback_data="start_data")
+                       ],
+                     ],
+                   ))
 
 
 if not os.path.exists('videos'):
@@ -89,9 +106,9 @@ def text(message):
             try:
                 bot.send_message(chat_id=message.chat.id, text='⏳ mohon menunggu...')
 
-                snaptik(f"{video_url}").get_media()[0].download(f"./videos/result_/{message.from_user.id}.mp4")
+                snaptik(f"{video_url}").get_media()[0].download_media(f"./videos/result_/{message.from_user.id}.mp4")
                 path = f"./videos/result_/{message.from_user.id}.mp4"
-                bot.delete()
+                bot.delete_message()
                 
                 with open(f"./videos/result_/{message.from_user.id}.mp4", "wb") as file:
                     bot.send_video(
@@ -103,7 +120,7 @@ def text(message):
 
             except:
                 bot.send_message(chat_id=message.chat.id, text=script.ERROR_MSG)
-              bot.delete()
+              bot.delete_message()
                
         else:
             bot.send_message(chat_id=message.chat.id, 
