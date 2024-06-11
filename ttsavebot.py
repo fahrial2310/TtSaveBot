@@ -17,13 +17,13 @@ OWNER_DEV = "@sengklek_ais"
 # edit text here
 class script(object):
   ERROR_MSG = """ ❌ Upload error, link salah, video dihapus atau aku tidak bisa menemukannya."""
-  START_MSG = f""" 👋 Halo, saya adalah {BOT_NAME}
-  saya akan membantu anda untuk mengunduh video <b>TikTok</b>.
+  START_MSG = f"""👋 Halo, saya adalah {BOT_NAME}.
+  Saya akan membantu anda untuk mengunduh video <b>TikTok</b>.
   /help - untuk bantuan menggunakan bot.
   
-  <b> Creator :</b> <a href='{CREATOR_LINK}'>{CREATOR}</a>
-  <b> Developing by :</b> <a href='{OWNER_LINK}'>{OWNER_DEV}</a> """
-  HELP_MSG = """ ❓ Untuk mengunduh video dari <b>TikTok</b>, <b>kirim</b> link ke saya.
+  <b>Creator :</b> <a href='{CREATOR_LINK}'>{CREATOR}</a>
+  <b>Developing by :</b> <a href='{OWNER_LINK}'>{OWNER_DEV}</a> """
+  HELP_MSG = """❓ Kirim link untuk mengunduh video dari <b>TikTok</b>.
   <b>Link harus dimulai dari:</b>
   🔗 https://vt.tiktok.com/... """
 # edit text here
@@ -49,8 +49,10 @@ def start_command(message):
                      reply_markup=InlineKeyboardMarkup(
                          [
                              [
-                                 InlineKeyboardButton("Creator", url=f'{CREATOR_LINK}'),
-                                 InlineKeyboardButton("Repo", url=f'{REPO}'),
+                               InlineKeyboardButton("Creator", url=f'{CREATOR_LINK}')
+                             ],
+                             [
+                               InlinekeyboardButton("Help", callback_data="help_data")
                              ],
                          ],
                      ))
@@ -59,7 +61,19 @@ def start_command(message):
 def help_command(message):
     bot.send_message(chat_id=message.chat.id, 
                     text=script.HELP_MSG, 
-                    parse_mode='html')
+                    parse_mode='html', 
+                    desable_web_page_preview=True, 
+                    reply_markup=InlineKeyboardMarkup(
+                      [
+                        [
+                          InlineKeyboardButton("Creator", url=f'{CREATOR_LINK}'),
+                          InlineKeyboardButton("Repo", url=f'{REPO}')
+                        ],
+                        [
+                          InlineKeyboardButton("◀ Back", callback_data="start_data")
+                        ],
+                      ],
+                    ))
 
 
 if not os.path.exists('videos'):
