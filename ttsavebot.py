@@ -53,6 +53,9 @@ def start_command(message):
                        [
                          InlinekeyboardButton("Help", callback_data="help_data")
                        ],
+                       [
+                         InlineKeyboardButton("About", callback_data="about_data")
+                       ],
                      ],
                    ))
 
