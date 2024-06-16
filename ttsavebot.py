@@ -27,7 +27,11 @@ class script(object):
   <b>Link harus dimulai dari:</b>
   🔗 https://vt.tiktok.com/... """
   ABOUT_MSG = f"""{BOT_NAME} adalah bot telegram yang dapat mengunduh video <b>Tiktok</b>.
-  Kirim link TikTok maka akan dikonversikan menjadi video."""
+  Kirim link TikTok maka akan dikonversikan menjadi video.
+  
+  Klik tombol repo untuk membuat bot."""
+  LOST_MSG = """  😕 Aku tidak mengerti, tolong kirimkan link <b>TikTok</b>. 
+  /help jika butuh bantuan. """
 # edit text here
 
 import os
@@ -72,8 +76,8 @@ def about_command(message):
                          InlineKeyboardButton("Help" , callback_data="help_data")
                        ],
                        [
-                         InlineKeyboardButton("Creator", url=f'{CREATOR_LINK}'),
-                         InlineKeyboardButton("Repo", url=f'{REPO}')
+                         InlineKeyboardButton("Creator", url=f"{CREATOR_LINK}"),
+                         InlineKeyboardButton("Repo", url=f"{REPO}")
                        ],
                      ],
                    ))
@@ -125,7 +129,7 @@ def text(message):
                
         else:
             bot.send_message(chat_id=message.chat.id, 
-                            text=" 😕 I didn't understand you, send me a link to a video from <b>TikTok</b>.", 
+                            text=script.LOST_MSG, 
                             parse_mode='html')
 
 if __name__ == "__main__":
