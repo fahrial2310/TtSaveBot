@@ -111,7 +111,6 @@ def text(message):
 
                 snaptik(f"{video_url}").get_media()[0].download_media(f"./videos/result_/{message.from_user.id}.mp4")
                 path = f"./videos/result_/{message.from_user.id}.mp4"
-                bot.delete_message()
                 
                 with open(f"./videos/result_/{message.from_user.id}.mp4", "wb") as file:
                     bot.send_video(
@@ -123,7 +122,6 @@ def text(message):
 
             except:
                 bot.send_message(chat_id=message.chat.id, text=script.ERROR_MSG)
-              bot.delete_message()
                
         else:
             bot.send_message(chat_id=message.chat.id, 
