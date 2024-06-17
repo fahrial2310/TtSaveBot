@@ -52,16 +52,7 @@ def start_command(message):
                    text=script.START_MSG,
                    parse_mode='html',
                    disable_web_page_preview=True,
-                   reply_markup=InlineKeyboardMarkup(
-                     [
-                       [
-                         InlineKeyboardButton("Help", callback_data="help_command")
-                       ],
-                       [
-                         InlineKeyboardButton("About", callback_data="about_command")
-                       ],
-                     ],
-                   ))
+                   )
   
 @bot.message_handler(commands=['about'])
 def about_command(message):
@@ -71,10 +62,6 @@ def about_command(message):
                    desable_web_page_preview=True,
                    reply_markup=InlineKeyboardMarkup(
                      [
-                       [
-                         InlineKeyboardButton("◀ Back" , callback_data="start_command"),
-                         InlineKeyboardButton("Help" , callback_data="help_command")
-                       ],
                        [
                          InlineKeyboardButton("Creator", url=f"{CREATOR_LINK}"),
                          InlineKeyboardButton("Repo", url=f"{REPO}")
@@ -88,16 +75,7 @@ def help_command(message):
                    text=script.HELP_MSG,
                    parse_mode='html',
                    desable_web_page_preview=True,
-                   reply_markup=InlineKeyboardMarkup(
-                     [
-                       [
-                         InlineKeyboardButton("About", callback_data="about_command")
-                       ],
-                       [
-                         InlineKeyboardButton("◀ Back", callback_data="start_command")
-                       ],
-                     ],
-                   ))
+                   )
 
 
 if not os.path.exists('videos'):
