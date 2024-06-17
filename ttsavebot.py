@@ -31,6 +31,8 @@ class script(object):
 
   Klik tombol repo untuk membuat bot."""
   LOST_MSG = """  😕 Aku tidak mengerti, tolong kirimkan link <b>TikTok</b>. 
+  Contoh: https://vt.tiktok.com/ ...
+  
   /help jika butuh bantuan. """
 # edit text here
 
@@ -52,19 +54,34 @@ def start_command(message):
                    text=script.START_MSG,
                    parse_mode='html',
                    disable_web_page_preview=True,
-                   )
+                   reply_markup=InlineKeyboardMarkup(
+                     [
+                       [
+                         InlineKeyboardButton("Creator", url=f"{CREATOR_LINK}")
+                       ],
+                       [
+                         InlineKeyboardButton("Help", callback_data="help_command"),
+                         InlineKeyboardButton("About", callback_data="about_command")
+                       ],
+                     ],
+                   ))
   
 @bot.message_handler(commands=['about'])
 def about_command(message):
   bot.send_message(chat_id=message.chat.id,
                    text=script.ABOUT_MSG,
                    parse_mode='html',
-                   desable_web_page_preview=True,
+                   disable_web_page_preview=True,
                    reply_markup=InlineKeyboardMarkup(
                      [
                        [
-                         InlineKeyboardButton("Creator", url=f"{CREATOR_LINK}"),
+                         InlineKeyboardButton("Creator", url=f"{CREATOR_LINK}")
+                       ],
+                       [
                          InlineKeyboardButton("Repo", url=f"{REPO}")
+                       ],
+                       [
+                         InlineKeyboardButton("Help", callback_data="help_command")
                        ],
                      ],
                    ))
@@ -74,8 +91,14 @@ def help_command(message):
   bot.send_message(chat_id=message.chat.id,
                    text=script.HELP_MSG,
                    parse_mode='html',
-                   desable_web_page_preview=True,
-                   )
+                   disable_web_page_preview=True,
+                   reply_markup=InlineKeyboardMarkup(
+                     [
+                       [
+                         InlineKeyboardButton("Creator", url=f"{CREATOR_LINK}")
+                       ],
+                     ],
+                   ))
 
 
 if not os.path.exists('videos'):
@@ -91,7 +114,7 @@ def text(message):
             try:
                 bot.send_message(chat_id=message.chat.id, text='⏳ mohon menunggu...')
 
-                snaptik(f"{video_url}").get_media()[0].download_media(f"./videos/result_/{message.from_user.id}.mp4")
+                snaptik(f"{video_url}").get_media()[0].download(f"./videos/result_/{message.from_user.id}.mp4")
                 path = f"./videos/result_/{message.from_user.id}.mp4"
 
                 with open(f"./videos/result_/{message.from_user.id}.mp4", "wb") as file:
@@ -108,7 +131,9 @@ def text(message):
         else:
             bot.send_message(chat_id=message.chat.id, 
                             text=script.LOST_MSG, 
-                            parse_mode='html')
+                            parse_mode='html',
+                            disable_web_page_preview=True
+                            )
 
 if __name__ == "__main__":
     bot.polling(non_stop=True)
