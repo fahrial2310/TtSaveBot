@@ -55,13 +55,15 @@ def start_command(message):
                    reply_markup=InlineKeyboardMarkup(
                      [
                        [
-                         InlineKeyboardButton("Help", callback_data="help_data")
+                         InlineKeyboardButton("Help", callback_data='help')
                        ],
                        [
-                         InlineKeyboardButton("About", callback_data="about_data")
+                         InlineKeyboardButton("About", callback_data='about')
                        ],
                      ],
-                   ))
+                   ),
+                   bot.delete()
+                  )
 
 @bot.message_handler(commands=['about'])
 def about_command(message):
@@ -72,32 +74,36 @@ def about_command(message):
                    reply_markup=InlineKeyboardMarkup(
                      [
                        [
-                         InlineKeyboardButton("Start" , callabck_data="start_data"),
-                         InlineKeyboardButton("Help" , callback_data="help_data")
+                         InlineKeyboardButton("Start" , callabck_data='start'),
+                         InlineKeyboardButton("Help" , callback_data='help)
                        ],
                        [
                          InlineKeyboardButton("Creator", url=f"{CREATOR_LINK}"),
                          InlineKeyboardButton("Repo", url=f"{REPO}")
                        ],
                      ],
-                   ))
+                   ),
+                   bot.delete()
+                  )
   
 @bot.message_handler(commands=['help'])
 def help_command(message):
-  bot.send_message(chat_id=message.chat.id, 
-                   text=script.HELP_MSG, 
-                   parse_mode='html', 
-                   desable_web_page_preview=True, 
+  bot.send_message(chat_id=message.chat.id,
+                   text=script.HELP_MSG,
+                   parse_mode='html',
+                   desable_web_page_preview=True,
                    reply_markup=InlineKeyboardMarkup(
                      [
                        [
-                         InlineKeyboardButton("About", callback_data="about_data")
+                         InlineKeyboardButton("About", callback_data='about')
                        ],
                        [
-                         InlineKeyboardButton("◀ Back", callback_data="start_data")
+                         InlineKeyboardButton("◀ Back", callback_data='start')
                        ],
                      ],
-                   ))
+                   ),
+                   bot.delete()
+                  )
 
 
 if not os.path.exists('videos'):
