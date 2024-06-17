@@ -55,7 +55,7 @@ def start_command(message):
                    reply_markup=InlineKeyboardMarkup(
                      [
                        [
-                         InlinekeyboardButton("Help", callback_data="help_data")
+                         InlineKeyboardButton("Help", callback_data="help_data")
                        ],
                        [
                          InlineKeyboardButton("About", callback_data="about_data")
