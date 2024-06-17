@@ -55,10 +55,10 @@ def start_command(message):
                    reply_markup=InlineKeyboardMarkup(
                      [
                        [
-                         InlineKeyboardButton("Help", callback_data='help')
+                         InlineKeyboardButton("Help", callback_data="help_command")
                        ],
                        [
-                         InlineKeyboardButton("About", callback_data='about')
+                         InlineKeyboardButton("About", callback_data="about_command")
                        ],
                      ],
                    ),
@@ -74,8 +74,8 @@ def about_command(message):
                    reply_markup=InlineKeyboardMarkup(
                      [
                        [
-                         InlineKeyboardButton("Start" , callback_data='start'),
-                         InlineKeyboardButton("Help" , callback_data='help)
+                         InlineKeyboardButton("◀ Back" , callback_data="start_command"),
+                         InlineKeyboardButton("Help" , callback_data="help_command")
                        ],
                        [
                          InlineKeyboardButton("Creator", url=f"{CREATOR_LINK}"),
@@ -95,10 +95,10 @@ def help_command(message):
                    reply_markup=InlineKeyboardMarkup(
                      [
                        [
-                         InlineKeyboardButton("About", callback_data='about')
+                         InlineKeyboardButton("About", callback_data="about_command")
                        ],
                        [
-                         InlineKeyboardButton("◀ Back", callback_data='start')
+                         InlineKeyboardButton("◀ Back", callback_data="start_command")
                        ],
                      ],
                    ),
