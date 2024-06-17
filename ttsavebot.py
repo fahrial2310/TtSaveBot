@@ -62,8 +62,7 @@ def start_command(message):
                        ],
                      ],
                    ),
-                   bot.delete(),
-                  )
+                   bot.delete())
   
 @bot.message_handler(commands=['about'])
 def about_command(message):
@@ -83,8 +82,7 @@ def about_command(message):
                        ],
                      ],
                    ),
-                   bot.delete(),
-                  )
+                   bot.delete())
 
 @bot.message_handler(commands=['help'])
 def help_command(message):
@@ -102,8 +100,7 @@ def help_command(message):
                        ],
                      ],
                    ),
-                   bot.delete(),
-                  )
+                   bot.delete())
 
 
 if not os.path.exists('videos'):
