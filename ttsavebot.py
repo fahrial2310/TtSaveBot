@@ -61,8 +61,7 @@ def start_command(message):
                          InlineKeyboardButton("About", callback_data="about_command")
                        ],
                      ],
-                   ),
-                   bot.delete())
+                   ))
   
 @bot.message_handler(commands=['about'])
 def about_command(message):
@@ -81,8 +80,7 @@ def about_command(message):
                          InlineKeyboardButton("Repo", url=f"{REPO}")
                        ],
                      ],
-                   ),
-                   bot.delete())
+                   ))
 
 @bot.message_handler(commands=['help'])
 def help_command(message):
@@ -99,8 +97,7 @@ def help_command(message):
                          InlineKeyboardButton("◀ Back", callback_data="start_command")
                        ],
                      ],
-                   ),
-                   bot.delete())
+                   ))
 
 
 if not os.path.exists('videos'):
