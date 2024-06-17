@@ -20,7 +20,7 @@ class script(object):
   START_MSG = f"""👋 Halo, saya adalah {BOT_NAME}.
   Saya akan membantu anda untuk mengunduh video <b>TikTok</b>.
   /help - untuk bantuan menggunakan bot.
-  
+
   <b>Creator :</b> <a href='{CREATOR_LINK}'>{CREATOR}</a>
   <b>Developing by :</b> @{OWNER_DEV} """
   HELP_MSG = """❓ Kirim link untuk mengunduh video dari <b>TikTok</b>.
@@ -28,7 +28,7 @@ class script(object):
   🔗 https://vt.tiktok.com/... """
   ABOUT_MSG = f"""{BOT_NAME} adalah bot telegram yang dapat mengunduh video <b>Tiktok</b>.
   Kirim link TikTok maka akan dikonversikan menjadi video.
-  
+
   Klik tombol repo untuk membuat bot."""
   LOST_MSG = """  😕 Aku tidak mengerti, tolong kirimkan link <b>TikTok</b>. 
   /help jika butuh bantuan. """
@@ -62,9 +62,9 @@ def start_command(message):
                        ],
                      ],
                    ),
-                   bot.delete()
+                   bot.delete(),
                   )
-
+  
 @bot.message_handler(commands=['about'])
 def about_command(message):
   bot.send_message(chat_id=message.chat.id,
@@ -83,9 +83,9 @@ def about_command(message):
                        ],
                      ],
                    ),
-                   bot.delete()
+                   bot.delete(),
                   )
-  
+
 @bot.message_handler(commands=['help'])
 def help_command(message):
   bot.send_message(chat_id=message.chat.id,
@@ -102,7 +102,7 @@ def help_command(message):
                        ],
                      ],
                    ),
-                   bot.delete()
+                   bot.delete(),
                   )
 
 
@@ -121,7 +121,7 @@ def text(message):
 
                 snaptik(f"{video_url}").get_media()[0].download_media(f"./videos/result_/{message.from_user.id}.mp4")
                 path = f"./videos/result_/{message.from_user.id}.mp4"
-                
+
                 with open(f"./videos/result_/{message.from_user.id}.mp4", "wb") as file:
                     bot.send_video(
                     chat_id=message.chat.id,
@@ -132,7 +132,7 @@ def text(message):
 
             except:
                 bot.send_message(chat_id=message.chat.id, text=script.ERROR_MSG)
-               
+
         else:
             bot.send_message(chat_id=message.chat.id, 
                             text=script.LOST_MSG, 
@@ -140,4 +140,3 @@ def text(message):
 
 if __name__ == "__main__":
     bot.polling(non_stop=True)
-  
