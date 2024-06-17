@@ -74,7 +74,7 @@ def about_command(message):
                    reply_markup=InlineKeyboardMarkup(
                      [
                        [
-                         InlineKeyboardButton("Start" , callabck_data='start'),
+                         InlineKeyboardButton("Start" , callback_data='start'),
                          InlineKeyboardButton("Help" , callback_data='help)
                        ],
                        [
